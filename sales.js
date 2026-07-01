@@ -1,66 +1,12 @@
 import { getSql } from './db.js';
 
-function saleNumber() {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth()+1).padStart(2,'0');
-  const day = String(d.getDate()).padStart(2,'0');
-  const rand = Math.floor(Math.random()*9000)+1000;
-  return `V-${y}${m}${day}-${rand}`;
-}
-
 export default async function handler(req, res) {
   try {
     const sql = getSql();
-
     if (req.method === 'GET') {
       const sales = await sql`SELECT * FROM sales ORDER BY created_at DESC LIMIT 500`;
       return res.status(200).json({ sales });
     }
-
-    if (req.method === 'POST') {
-      const b = req.body || {};
-      const rows = await sql`INSERT INTO sales
-        (sale_number, status, agency_name, seller_email, client_name, client_phone, client_age, client_gender, client_address, product_type, frame_brand, frame_reference, lens_type, payment_method, total_amount, paid_amount, is_insured, insurance_company, insurance_number, insurance_rate, insurance_amount, prescription_file_name, prescription_file_type, prescription_file_data, follow_up_date, notes)
-        VALUES
-        (${saleNumber()}, ${b.status || 'brouillon'}, ${b.agency_name}, ${b.seller_email || null}, ${b.client_name}, ${b.client_phone || null}, ${b.client_age ? Number(b.client_age) : null}, ${b.client_gender || null}, ${b.client_address || null}, ${b.product_type}, ${b.frame_brand || null}, ${b.frame_reference || null}, ${b.lens_type || null}, ${b.payment_method || null}, ${Number(b.total_amount || 0)}, ${Number(b.paid_amount || 0)}, ${!!b.is_insured}, ${b.insurance_company || null}, ${b.insurance_number || null}, ${Number(b.insurance_rate || 0)}, ${Number(b.insurance_amount || 0)}, ${b.prescription_file_name || null}, ${b.prescription_file_type || null}, ${b.prescription_file_data || null}, ${b.follow_up_date || null}, ${b.notes || null})
-        RETURNING *`;
-      return res.status(201).json({ sale: rows[0] });
-    }
-
-    if (req.method === 'PATCH') {
-      const b = req.body || {};
-      const rows = await sql`UPDATE sales SET
-        status=${b.status || 'brouillon'},
-        agency_name=${b.agency_name},
-        client_name=${b.client_name},
-        client_phone=${b.client_phone || null},
-        client_age=${b.client_age ? Number(b.client_age) : null},
-        client_gender=${b.client_gender || null},
-        client_address=${b.client_address || null},
-        product_type=${b.product_type},
-        frame_brand=${b.frame_brand || null},
-        frame_reference=${b.frame_reference || null},
-        lens_type=${b.lens_type || null},
-        payment_method=${b.payment_method || null},
-        total_amount=${Number(b.total_amount || 0)},
-        paid_amount=${Number(b.paid_amount || 0)},
-        is_insured=${!!b.is_insured},
-        insurance_company=${b.insurance_company || null},
-        insurance_number=${b.insurance_number || null},
-        insurance_rate=${Number(b.insurance_rate || 0)},
-        insurance_amount=${Number(b.insurance_amount || 0)},
-        prescription_file_name=${b.prescription_file_name || null},
-        prescription_file_type=${b.prescription_file_type || null},
-        prescription_file_data=${b.prescription_file_data || null},
-        follow_up_date=${b.follow_up_date || null},
-        notes=${b.notes || null},
-        updated_at=NOW()
-        WHERE id=${b.id}
-        RETURNING *`;
-      return res.status(200).json({ sale: rows[0] });
-    }
-
     res.status(405).json({ error:'Méthode non autorisée' });
   } catch (error) {
     res.status(500).json({ error:error.message });

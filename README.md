@@ -1,30 +1,34 @@
-# Optic Manager V3 — Ventes + Brouillons + Ordonnances
+# Optic Manager — Connexion par identifiant
 
-Cette version ajoute :
-- module ventes complet
-- statut : brouillon, en attente, terminée, annulée
-- date de relance
-- import/scan ordonnance image ou PDF
-- paiements
-- assurance
-- modification d'une vente
-- tableau de bord qui compte seulement les ventes terminées dans le CA
+Cette version remplace la connexion par email par une connexion avec identifiant interne.
+
+## Identifiants par défaut
+
+- ADM001 / admin123
+- DIR001 / direction123
+- DOR001 / vente123
+- RDA-DOR001 / dori123
+- CPT001 / comptable123
+
+## Fonctionnalités
+
+- Identifiant unique par utilisateur
+- Génération automatique selon rôle et agence
+- Exemple : DOR001, KAY001, BOB001, RDA-DOR001, ADM001
+- Mot de passe hashé
+- Compte actif/inactif
+- Nombre de connexions
+- Dernière connexion
+- Journal des connexions
+- Rôles et menus visibles selon le profil
 
 ## Installation
 
-1. Décompresse le ZIP.
-2. Upload les fichiers sur GitHub.
+1. Décompresser le ZIP.
+2. Uploader les fichiers sur GitHub.
 3. Commit changes.
-4. Attends Vercel.
-5. Ouvre :
+4. Attendre Vercel.
+5. Ouvrir :
    https://optic-manager-gray.vercel.app/api/setup
 
-6. Puis :
-   https://optic-manager-gray.vercel.app
-
-Comptes :
-- admin@optic.com / admin123
-- vendeuse@optic.com / vente123
-- direction@optic.com / direction123
-
-Note : dans cette V3, les ordonnances sont stockées en base64 dans Neon pour simplifier l'installation. Limite conseillée : moins de 900 Ko par fichier. Une prochaine version pourra utiliser un vrai stockage de fichiers.
+6. Ouvrir l'application normale.
