@@ -1,0 +1,1 @@
+-- Schema créé automatiquement par /api/setup
