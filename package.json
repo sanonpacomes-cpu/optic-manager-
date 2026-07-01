@@ -1,8 +1,4 @@
 {
-  "name": "optic-manager",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,8 +9,7 @@
     "vite": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest",
-    "@supabase/supabase-js": "latest"
+    "@neondatabase/serverless": "latest"
   },
   "devDependencies": {}
 }
