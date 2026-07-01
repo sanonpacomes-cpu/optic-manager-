@@ -1,5 +1,5 @@
 import { Eye } from 'lucide-react';
-import { demoUsers } from '../data/demoData';
+import { demoUsers } from "./demoData";
 
 export default function Login({ onLogin }) {
   function handleSubmit(e) {
