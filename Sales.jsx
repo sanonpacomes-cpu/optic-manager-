@@ -1,4 +1,4 @@
-import { agencies, saleTypes } from '../data/demoData';
+import { agencies, saleTypes } from './demoData';
 
 export default function Sales({ sales, setSales, user }) {
   function addSale(e) {
