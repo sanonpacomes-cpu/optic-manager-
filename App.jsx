@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Dashboard from './pages/Dashboard';
-import Login from './pages/Login';
-import Sales from './pages/Sales';
-import SimplePage from './pages/SimplePage';
-import './styles/style.css';
-
+import Header from './Header';
+import Sidebar from './Sidebar';
+import Dashboard from './Dashboard';
+import Login from './Login';
+import Sales from './Sales';
+import SimplePage from './SimplePage';
+import './style.css';
 const initialSales = [
   { id: '1', date: new Date().toISOString().slice(0,10), agency: 'Dori', client: 'Client Démo', type: 'Lunettes complètes', seller: 'Vendeuse Démo', amount: 29000 },
   { id: '2', date: new Date().toISOString().slice(0,10), agency: 'Kaya', client: 'Client Assurance', type: 'Verres progressifs', seller: 'Administration', amount: 59000 }
