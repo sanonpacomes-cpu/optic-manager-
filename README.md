@@ -1,20 +1,30 @@
-# Optic Manager V2
+# Optic Manager V3 — Ventes + Brouillons + Ordonnances
 
-Version 2 : agences + utilisateurs + ventes connectés à Neon PostgreSQL.
+Cette version ajoute :
+- module ventes complet
+- statut : brouillon, en attente, terminée, annulée
+- date de relance
+- import/scan ordonnance image ou PDF
+- paiements
+- assurance
+- modification d'une vente
+- tableau de bord qui compte seulement les ventes terminées dans le CA
 
-## Après avoir remplacé les fichiers sur GitHub
+## Installation
 
-1. Attendre le redéploiement Vercel.
-2. Ouvrir cette URL :
+1. Décompresse le ZIP.
+2. Upload les fichiers sur GitHub.
+3. Commit changes.
+4. Attends Vercel.
+5. Ouvre :
    https://optic-manager-gray.vercel.app/api/setup
 
-3. Puis vérifier :
-   https://optic-manager-gray.vercel.app/api/health
-
-4. Revenir sur l'application :
+6. Puis :
    https://optic-manager-gray.vercel.app
 
-Comptes par défaut :
+Comptes :
 - admin@optic.com / admin123
 - vendeuse@optic.com / vente123
 - direction@optic.com / direction123
+
+Note : dans cette V3, les ordonnances sont stockées en base64 dans Neon pour simplifier l'installation. Limite conseillée : moins de 900 Ko par fichier. Une prochaine version pourra utiliser un vrai stockage de fichiers.
