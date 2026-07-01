@@ -1,34 +1,31 @@
-# Optic Manager — Connexion par identifiant
+# Optic Manager V6 — Identifiants + Ventes professionnelles
 
-Cette version remplace la connexion par email par une connexion avec identifiant interne.
+Cette version fusionne :
+- connexion par identifiant
+- gestion des utilisateurs et rôles
+- ventes / devis
+- statuts de vente
+- scan/import ordonnance
+- paiement
+- assurance
+- impression facture/reçu
+- tableau de bord
 
-## Identifiants par défaut
+## Installation
+
+1. Décompresse le ZIP.
+2. Upload les fichiers sur GitHub.
+3. Commit changes.
+4. Attends Vercel.
+5. Ouvre :
+   https://optic-manager-gray.vercel.app/api/setup
+
+6. Ouvre l'application normale.
+
+## Identifiants
 
 - ADM001 / admin123
 - DIR001 / direction123
 - DOR001 / vente123
 - RDA-DOR001 / dori123
 - CPT001 / comptable123
-
-## Fonctionnalités
-
-- Identifiant unique par utilisateur
-- Génération automatique selon rôle et agence
-- Exemple : DOR001, KAY001, BOB001, RDA-DOR001, ADM001
-- Mot de passe hashé
-- Compte actif/inactif
-- Nombre de connexions
-- Dernière connexion
-- Journal des connexions
-- Rôles et menus visibles selon le profil
-
-## Installation
-
-1. Décompresser le ZIP.
-2. Uploader les fichiers sur GitHub.
-3. Commit changes.
-4. Attendre Vercel.
-5. Ouvrir :
-   https://optic-manager-gray.vercel.app/api/setup
-
-6. Ouvrir l'application normale.
