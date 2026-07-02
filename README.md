@@ -1,4 +1,4 @@
-# Optic Manager V11 Production Stable
+# Optic Manager V12 Production Stable
 
 Conserve les modules déjà développés et corrige la structure API.
 

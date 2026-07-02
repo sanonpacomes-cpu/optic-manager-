@@ -1,0 +1,23 @@
+À vérifier sur GitHub après upload :
+
+À la racine :
+- api/
+- database/
+- index.html
+- main.jsx
+- style.css
+- package.json
+- vercel.json
+
+Dans api/ :
+- health.js
+- login.js
+- ensure.js
+- setup.js
+- sales.js
+- users.js
+- clients.js
+- agencies.js
+- db.js
+- security.js
+- generate-login-id.js

@@ -122,7 +122,7 @@ export async function ensureDatabase() {
 export default async function handler(req, res) {
   try {
     await ensureDatabase();
-    res.status(200).json({ success: true, message: 'Optic Manager V11 : API et base Neon prêtes.' });
+    res.status(200).json({ success: true, message: 'Optic Manager V12 : API et base Neon prêtes.' });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }

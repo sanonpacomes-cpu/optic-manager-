@@ -1,27 +1,18 @@
-IMPORTANT - NE PAS UPLOADER LES FICHIERS API À LA RACINE
+OPTIC MANAGER V12 - CORRECTION VERCEL
 
-Après décompression, il faut uploader tout le contenu en gardant le dossier api.
+Cette version corrige l'erreur :
+Function Runtimes must have a valid version
 
-Sur GitHub, à la racine, tu dois voir :
-- api
-- database
-- index.html
-- main.jsx
-- style.css
-- package.json
-- vercel.json
+Correction effectuée :
+- suppression du champ functions/runtime dans vercel.json
+- conservation des API dans le dossier api
+- conservation des modules existants
 
-Dans le dossier api, tu dois voir :
-- health.js
-- login.js
-- ensure.js
-- setup.js
-- sales.js
-- users.js
-- clients.js
-- agencies.js
-- db.js
-- security.js
-- generate-login-id.js
+IMPORTANT :
+Sur GitHub mobile, il faut que les fichiers API restent dans le dossier api.
+Si GitHub met health.js, login.js, etc. à la racine, /api/health donnera encore 404.
 
-Si health.js est à la racine au lieu d'être dans api, /api/health donnera encore 404.
+Après upload et redeploy :
+1. Ouvre https://optic-manager-gray.vercel.app/api/health
+2. Tu dois voir : Connexion Neon réussie. API V12 active.
+3. Ensuite connecte-toi avec ADM001 / admin123
