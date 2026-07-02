@@ -1,27 +1,28 @@
-# Optic Manager V7 Stable
+# Optic Manager V8 Anti-404
 
-Cette version conserve et fusionne :
-- connexion par identifiant
-- rôles et permissions
-- gestion utilisateurs
-- clients
-- ventes / devis
-- scan/import ordonnance
-- assurance dans clients et ventes
-- facture/reçu imprimable
-- tableau de bord
+Cette version conserve les modules précédents et ajoute une protection :
+si Vercel ne détecte pas encore /api, l'application fonctionne en mode local dans le navigateur.
+
+Modules :
+- Connexion par identifiant
+- Rôles
+- Utilisateurs
+- Clients
+- Ventes/devis
+- Ordonnances
+- Assurance
+- Facture imprimable
+- Tableau de bord
 
 Installation :
 1. Décompresse le ZIP.
-2. Upload tous les fichiers sur GitHub.
+2. Upload tous les fichiers ET le dossier api sur GitHub.
 3. Commit changes.
 4. Attends Vercel.
-5. Ouvre : https://optic-manager-gray.vercel.app/api/setup
-6. Ouvre l'application.
+5. Ouvre /api/setup si le dossier api est bien présent.
+6. Connecte-toi.
 
 Identifiants :
 ADM001 / admin123
 DIR001 / direction123
 DOR001 / vente123
-RDA-DOR001 / dori123
-CPT001 / comptable123
