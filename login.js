@@ -7,7 +7,6 @@ export default async function handler(req, res) {
 
   try {
     await ensureDatabase();
-
     const { login_id, password } = req.body || {};
     const id = String(login_id || '').trim().toUpperCase();
 

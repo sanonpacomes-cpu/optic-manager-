@@ -98,9 +98,7 @@ export async function ensureDatabase() {
 
   const agencies = ['Dori','Somgandé','Kamsonghin','Tengandgo','Kaya','Bobo','Banfora','Gounghin'];
   for (const name of agencies) {
-    await sql`INSERT INTO agencies (name, city)
-      VALUES (${name}, ${name})
-      ON CONFLICT (name) DO NOTHING`;
+    await sql`INSERT INTO agencies (name, city) VALUES (${name}, ${name}) ON CONFLICT (name) DO NOTHING`;
   }
 
   const users = [
@@ -124,7 +122,7 @@ export async function ensureDatabase() {
 export default async function handler(req, res) {
   try {
     await ensureDatabase();
-    res.status(200).json({ success: true, message: 'Optic Manager V10 : API et base Neon prêtes.' });
+    res.status(200).json({ success: true, message: 'Optic Manager V11 : API et base Neon prêtes.' });
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
   }

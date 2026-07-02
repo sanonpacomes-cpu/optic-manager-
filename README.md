@@ -1,9 +1,9 @@
-# Optic Manager V10 Production API
+# Optic Manager V11 Production Stable
 
-Cette version corrige le problème 404 des API Vercel si le dossier api est bien uploadé à la racine du dépôt.
+Conserve les modules déjà développés et corrige la structure API.
 
-Test après déploiement :
-https://optic-manager-gray.vercel.app/api/health
+Après upload GitHub, vérifie que le dossier `api` existe à la racine.
 
-Connexion :
-ADM001 / admin123
+Test : https://optic-manager-gray.vercel.app/api/health
+
+Connexion : ADM001 / admin123

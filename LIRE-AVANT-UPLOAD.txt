@@ -1,23 +1,27 @@
-OPTIC MANAGER V10 - INSTRUCTIONS IMPORTANTES
+IMPORTANT - NE PAS UPLOADER LES FICHIERS API À LA RACINE
 
-Le 404 sur /api/health veut dire que le dossier api n'a pas été envoyé correctement.
+Après décompression, il faut uploader tout le contenu en gardant le dossier api.
 
-Pour uploader cette version :
-1. Décompresse ce ZIP.
-2. Sur GitHub, ouvre le dépôt optic-manager.
-3. Upload TOUT LE CONTENU du dossier décompressé :
-   - index.html
-   - main.jsx
-   - style.css
-   - package.json
-   - vercel.json
-   - le dossier api complet
-   - le dossier database
-4. Vérifie sur GitHub que tu vois bien un dossier api à la racine.
-5. Dans ce dossier api, tu dois voir :
-   health.js, login.js, ensure.js, setup.js, sales.js, users.js, clients.js, agencies.js, db.js, security.js
-6. Commit changes.
-7. Attends le redéploiement Vercel.
-8. Ouvre : https://optic-manager-gray.vercel.app/api/health
+Sur GitHub, à la racine, tu dois voir :
+- api
+- database
+- index.html
+- main.jsx
+- style.css
+- package.json
+- vercel.json
 
-Si /api/health affiche Connexion Neon réussie, l'application est en mode production.
+Dans le dossier api, tu dois voir :
+- health.js
+- login.js
+- ensure.js
+- setup.js
+- sales.js
+- users.js
+- clients.js
+- agencies.js
+- db.js
+- security.js
+- generate-login-id.js
+
+Si health.js est à la racine au lieu d'être dans api, /api/health donnera encore 404.

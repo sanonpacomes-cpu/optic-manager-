@@ -6,11 +6,9 @@ export function hashPassword(password) {
 
 export function prefixFor(role, agencyName = '') {
   const a = String(agencyName || '').toLowerCase();
-
   if (role === 'admin') return 'ADM';
   if (role === 'direction') return 'DIR';
   if (role === 'comptable') return 'CPT';
-
   let p = 'DOR';
   if (a.includes('kaya')) p = 'KAY';
   else if (a.includes('bobo')) p = 'BOB';
@@ -19,6 +17,5 @@ export function prefixFor(role, agencyName = '') {
   else if (a.includes('kam')) p = 'KAM';
   else if (a.includes('teng')) p = 'TNG';
   else if (a.includes('gou')) p = 'GOU';
-
   return role === 'responsable_agence' ? 'RDA-' + p : p;
 }
