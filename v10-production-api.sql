@@ -1,0 +1,1 @@
+-- Tables créées automatiquement par api/ensure.js
